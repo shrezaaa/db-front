@@ -9,12 +9,20 @@ import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { BooksRoutingModule } from './books.routing';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
 
 const MAT_MODULES = [
   MatTableModule,
   MatButtonModule,
   MatIconModule,
   MatMenuModule,
+  MatInputModule,
+  MatFormFieldModule,
+  MatCheckboxModule,
+  MatSelectModule,
 ];
 
 @NgModule({
@@ -25,7 +33,7 @@ const MAT_MODULES = [
     ReactiveFormsModule,
     SharedModule,
     FormsModule,
-    BooksRoutingModule
+    BooksRoutingModule,
   ],
 })
 export class BooksModule {}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { TableField } from 'dynamic-mat-table';
 import { BehaviorSubject } from 'rxjs';
 import { map, take } from 'rxjs/operators';
@@ -11,6 +12,12 @@ import { BooksService } from '../shared/services/books.service';
   styleUrls: ['./books-list.component.scss'],
 })
 export class BooksListComponent implements OnInit {
+  form = this.fb.group({
+    title: '',
+    stockName: '',
+    stockID: '',
+    expensiveBooks: false,
+  });
   tableFields: TableField<any>[] = [
     {
       name: 'book_title',
@@ -31,11 +38,19 @@ export class BooksListComponent implements OnInit {
     },
   ];
   tableDataSource = new BehaviorSubject<any[]>([]);
-  constructor(private booksService: BooksService) {}
+  stocks: Array<any>;
+  constructor(private fb: FormBuilder, private booksService: BooksService) {}
 
   ngOnInit(): void {
+    this.booksService.getStocks().subscribe((res: any) => {
+      this.stocks = res;
+    });
+    this.getData();
+  }
+
+  getData() {
     this.booksService
-      .getBooks()
+      .getBooks(this.form.value)
       .pipe(
         take(1),
         map((res: any) => {
@@ -45,5 +60,15 @@ export class BooksListComponent implements OnInit {
       .subscribe((res) => {
         this.tableDataSource.next(res);
       });
+  }
+
+  checkboxChange(event) {
+    if (event.checked) {
+      this.form.get('title').disable();
+      this.form.get('stockName').disable();
+    } else {
+      this.form.get('title').enable();
+      this.form.get('stockName').enable();
+    }
   }
 }

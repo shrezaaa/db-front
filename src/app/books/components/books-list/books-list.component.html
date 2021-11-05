@@ -8,6 +8,38 @@
 
   <div class="divider"></div>
 
+  <form [formGroup]="form" (ngSubmit)="getData()">
+    <div class="flex-container">
+      <h6 class="align-self-center mt-4 padding-x-5">Filters:</h6>
+      <mat-form-field class="flex-25 padding-x-5" appearance="standard">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title" />
+      </mat-form-field>
+      <mat-form-field class="flex-25 padding-x-5" appearance="standard">
+        <mat-label>Select Stock</mat-label>
+        <mat-select formControlName="stockID">
+          <mat-option>None</mat-option>
+          <ng-container *ngFor="let item of stocks">
+            <mat-option [value]="item.stock_room_id">{{
+              item.stock_title
+            }}</mat-option>
+          </ng-container>
+        </mat-select>
+      </mat-form-field>
+      <mat-checkbox
+        class="align-self-center flex-25 padding-x-5"
+        (change)="checkboxChange($event)"
+        formControlName="expensiveBooks"
+        >Expensive Books</mat-checkbox
+      >
+      <div class="align-self-center ml-auto">
+        <button mat-raised-button color="primary" type="submit">
+          Search<mat-icon>search</mat-icon>
+        </button>
+      </div>
+    </div>
+  </form>
+
   <dynamic-mat-table
     class="flex-1"
     tableName=""
