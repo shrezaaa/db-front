@@ -14,20 +14,20 @@ export class BooksListComponent implements OnInit {
   tableFields: TableField<any>[] = [
     {
       name: 'book_title',
-      header: 'book title',
+      header: 'Title',
       cellEllipsisRow: 2,
     },
     {
       name: 'eddition',
-      header: 'eddition',
-    },
-    {
-      name: 'price',
-      header: 'price',
+      header: 'Eddition',
     },
     {
       name: 'release_date',
-      header: 'release_date',
+      header: 'Release Date',
+    },
+    {
+      name: 'price',
+      header: 'Price',
     },
   ];
   tableDataSource = new BehaviorSubject<any[]>([]);
