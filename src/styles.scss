@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/colors.scss";
+@import "./assets/styles/main-classes.scss";
+@import "./assets/styles/formly.scss";
+@import "~animate.css/animate.min";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+button {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #959595;
+  border-radius: 20px;
+}
+
+.mat-form-field-suffix {
+  align-self: center !important;
+}
