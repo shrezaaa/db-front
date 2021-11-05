@@ -8,7 +8,4 @@ import { SharedService } from './shared/services/shared.service';
 })
 export class AppComponent {
   title = 'db-front';
-  constructor(private sharedService: SharedService) {
-    
-  }
 }
