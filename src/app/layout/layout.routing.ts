@@ -13,11 +13,11 @@ const routes: Routes = [
         path: 'home',
         component: MainPageComponent,
       },
-      // {
-      //   path: 'profile',
-      //   loadChildren: () =>
-      //     import('./../profile/profile.module').then((m) => m.ProfileModule),
-      // },
+      {
+        path: 'books',
+        loadChildren: () =>
+          import('./../books/books.module').then((m) => m.BooksModule),
+      },
       // {
       //   path: 'store',
       //   loadChildren: () =>

@@ -4,8 +4,8 @@ export const NAVBAR_CONFIG: NavbarConfig = {
   public: [
     {
       title:'Books',
-      route:'home',
-      id:'home'
+      route:'books',
+      id:'books'
     }
   ]
 };
