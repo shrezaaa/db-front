@@ -20,7 +20,18 @@
     border-bottom-right-radius: 0px;
 
     .toggle-active {
-      background-color: rgb(5, 54, 127);
+      background-color: rgb(127, 5, 5);
+      // padding: 0;
+      min-width: 0;
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      // line-height: 4px;
+       border-radius: 0%; 
+
+      border-top-right-radius: 17px;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 20px;
     }
 
     .side-button:focus {

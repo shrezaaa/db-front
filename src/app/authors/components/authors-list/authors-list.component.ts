@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { TableField } from 'dynamic-mat-table';
 import { BehaviorSubject } from 'rxjs';
 import { map, take } from 'rxjs/operators';
-import { BookModel } from '../shared/models/book.model';
-import { BooksService } from '../shared/services/books.service';
+import { BookModel } from '../../../books/components/shared/models/book.model';
+import { BooksService } from '../../../books/components/shared/services/books.service';
 
 @Component({
-  selector: 'app-books-list',
-  templateUrl: './books-list.component.html',
-  styleUrls: ['./books-list.component.scss'],
+  selector: 'app-authors-list',
+  templateUrl: './authors-list.component.html',
+  styleUrls: ['./authors-list.component.scss'],
 })
-export class BooksListComponent implements OnInit {
+export class AuthorsListComponent implements OnInit {
   tableFields: TableField<any>[] = [
     {
       name: 'book_title',

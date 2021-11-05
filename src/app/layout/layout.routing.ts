@@ -18,16 +18,18 @@ const routes: Routes = [
         loadChildren: () =>
           import('./../books/books.module').then((m) => m.BooksModule),
       },
-      // {
-      //   path: 'store',
-      //   loadChildren: () =>
-      //     import('./../store/store.module').then((m) => m.StoreModule),
-      // },
-      // {
-      //   path: 'ReTasker',
-      //   loadChildren: () =>
-      //     import('../re-tasker/re-tasker.module').then((m) => m.ReTaskerModule),
-      // },
+      {
+        path: 'authors',
+        loadChildren: () =>
+          import('./../authors/authors.module').then((m) => m.AuthorsModule),
+      },
+      {
+        path: 'customers',
+        loadChildren: () =>
+          import('./../customers/customers.module').then(
+            (m) => m.CustomersModule
+          ),
+      },
     ],
   },
 ];
