@@ -274,14 +274,14 @@ export class RequestBuilder {
       globalService.finishLoading();
     }
     if (parent.messageShow) {
-      resp.messages.forEach((data) => {
-        globalService.toaster.open({
-          type: resp.success ? 'success' : 'danger',
-          duration: 3000,
-          caption: '',
-          text: data.trim(),
-        });
-      });
+      // resp.messages.forEach((data) => {
+      //   globalService.toaster.open({
+      //     type: resp.success ? 'success' : 'danger',
+      //     duration: 3000,
+      //     caption: '',
+      //     text: data.trim(),
+      //   });
+      // });
     }
   }
 

@@ -34,5 +34,10 @@ button {
   align-self: center !important;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+dynamic-mat-table {
+  background-color: white !important;
+}
+
+.table > :not(:first-child) {
+  border-top: 0;
+}
