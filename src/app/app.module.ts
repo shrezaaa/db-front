@@ -8,6 +8,7 @@ import { AuthGuard } from './core/auth.guard';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { CoreModule } from './core/core.module';
     ReactiveFormsModule,
     HttpClientModule,
     CoreModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent],
