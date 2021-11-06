@@ -65,10 +65,10 @@ export class BooksListComponent implements OnInit {
   checkboxChange(event) {
     if (event.checked) {
       this.form.get('title').disable();
-      this.form.get('stockName').disable();
+      this.form.get('stockID').disable();
     } else {
       this.form.get('title').enable();
-      this.form.get('stockName').enable();
+      this.form.get('stockID').enable();
     }
   }
 }
