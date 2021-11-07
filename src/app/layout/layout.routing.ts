@@ -14,6 +14,13 @@ const routes: Routes = [
         component: MainPageComponent,
       },
       {
+        path: 'publishers',
+        loadChildren: () =>
+          import('./../publishers/publishers.module').then(
+            (m) => m.PublishersModule
+          ),
+      },
+      {
         path: 'books',
         loadChildren: () =>
           import('./../books/books.module').then((m) => m.BooksModule),

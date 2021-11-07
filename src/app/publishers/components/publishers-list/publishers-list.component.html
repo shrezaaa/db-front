@@ -1,0 +1,20 @@
+<div class="container h-100">
+  <div class="d-flex flex-column">
+    <div class="header">
+      <h5 class="text-bold m-0">Publishers</h5>
+      <section></section>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <dynamic-mat-table
+    class="flex-1"
+    tableName=""
+    [columns]="tableFields"
+    [sticky]="true"
+    [rowSelectionMode]="'none'"
+    [showNoData]="true"
+    [dataSource]="tableDataSource"
+  ></dynamic-mat-table>
+</div>
