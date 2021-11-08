@@ -41,3 +41,7 @@ dynamic-mat-table {
 .table > :not(:first-child) {
   border-top: 0;
 }
+
+.mat-tab-body-wrapper {
+  flex-grow: 1;
+}

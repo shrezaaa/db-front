@@ -14,4 +14,20 @@ export class PublishersService {
       .action('')
       .call(this.gs);
   }
+
+  addPublisher(model) {
+    return ApiRequest("POST", true)
+      .controller("Publisher")
+      .action("Add")
+      .addBodies(model)
+      .call(this.gs);
+  }
+
+  deletePublisher(PublisherID) {
+    return ApiRequest("DELETE", true)
+      .controller("Publisher")
+      .action("Delete")
+      .addParam("PublisherID", PublisherID)
+      .call(this.gs);
+  }
 }
