@@ -37,36 +37,38 @@
       </div>
     </mat-tab>
     <mat-tab label="second">
-      <h5 class="mr-3 mt-0 mb-1">Add/Edit Form</h5>
-      <hr class="mb-1 mt-2" />
       <div class="container">
-      <form [formGroup]="form" (ngSubmit)="onSubmitForm()">
-          <formly-form
-            [form]="form"
-            [fields]="formFields"
-            [model]="model"
-          ></formly-form>
-          <div class="container d-flex flex-row justify-content-center mt-2 mb-1">
-            <button
-              mat-raised-button
-              color="warn"
-              class="mr-3"
-              type="button"
-              (click)="onCancel()"
-            >
-              Cancel
-            </button>
-            <button
-              [disabled]="form.invalid"
-              mat-raised-button
-              color="primary"
-              class="ml-3"
-              type="submit"
-            >
-              Submit
-            </button>
-          </div>
-        </form>
+        <h5 class="mr-3 mt-0 mb-1">Add/Edit Form</h5>
+        <hr class="mb-1 mt-2" />
+        <div class="">
+          <form [formGroup]="form" (ngSubmit)="onSubmitForm()">
+            <formly-form
+              [form]="form"
+              [fields]="formFields"
+              [model]="model"
+            ></formly-form>
+            <div class="d-flex flex-row justify-content-center mt-2 mb-1">
+              <button
+                mat-raised-button
+                color="warn"
+                class="mr-3"
+                type="button"
+                (click)="onCancel()"
+              >
+                Cancel
+              </button>
+              <button
+                [disabled]="form.invalid"
+                mat-raised-button
+                color="primary"
+                class="ml-3"
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </mat-tab>
   </mat-tab-group>
