@@ -23,11 +23,11 @@ export class PublishersService {
       .call(this.gs);
   }
 
-  deletePublisher(PublisherID) {
+  deletePublisher(publisher_id) {
     return ApiRequest("DELETE", true)
-      .controller("Publisher")
-      .action("Delete")
-      .addParam("PublisherID", PublisherID)
+      .controller("publishers")
+      .action("delete")
+      .addParam("publisher_id", publisher_id)
       .call(this.gs);
   }
 }

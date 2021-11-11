@@ -72,24 +72,23 @@ export class PublishersListComponent implements OnInit {
 
   onSubmitForm() {
     this.publishersService.addPublisher(this.model).subscribe((res: any) => {
-      if (res[0].publisher_add) {
+      // if (res[0].publisher_add) {
         this.getData();
         this.onCancel();
-      }
+      // }
     });
   }
 
   initEditData(data) {
     this.tabIndex = 1;
     this.model = { ...data };
-    this.form.patchValue(data.editData);
   }
 
   deleteItem(itemID) {
     this.publishersService.deletePublisher(itemID).subscribe((res) => {
-      if (res.success) {
+      // if (res.success) {
         this.getData();
-      }
+      // }
     });
   }
 
@@ -116,7 +115,7 @@ export class PublishersListComponent implements OnInit {
         break;
       case 'Delete':
         if (this.selectedRows.length > 0) {
-          // this.deleteItem(this.selectedRow[0].TermConditionID);
+          this.deleteItem(this.selectedRows[0].publisher_id);
         } else {
           this.toaster.open({
             caption: 'Event Message',
@@ -126,7 +125,7 @@ export class PublishersListComponent implements OnInit {
         break;
       case 'Modify':
         if (this.selectedRows.length > 0) {
-          // this.initEditData(this.selectedRow[0]);
+          this.initEditData(this.selectedRows[0]);
         } else {
           this.toaster.open({
             caption: 'Event Message',
