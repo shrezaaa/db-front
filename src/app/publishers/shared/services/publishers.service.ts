@@ -17,8 +17,8 @@ export class PublishersService {
 
   addPublisher(model) {
     return ApiRequest("POST", true)
-      .controller("Publisher")
-      .action("Add")
+      .controller("publishers")
+      .action("add")
       .addBodies(model)
       .call(this.gs);
   }

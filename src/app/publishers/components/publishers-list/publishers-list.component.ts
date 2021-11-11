@@ -71,8 +71,8 @@ export class PublishersListComponent implements OnInit {
   }
 
   onSubmitForm() {
-    this.publishersService.addPublisher(this.model).subscribe((res) => {
-      if (res.success) {
+    this.publishersService.addPublisher(this.model).subscribe((res: any) => {
+      if (res[0].publisher_add) {
         this.getData();
         this.onCancel();
       }
@@ -143,12 +143,116 @@ export class PublishersListComponent implements OnInit {
         fieldGroupClassName: 'flex-container',
         fieldGroup: [
           {
-            className: 'flex-100 padding-x-5',
-            key: 'TermConditionName',
+            className: 'flex-50 padding-x-5',
+            key: 'first_name',
             type: 'input',
             templateOptions: {
+              required: true,
               appearance: 'outline',
-              label: 'Term Condition Name',
+              label: 'first_name',
+            },
+          },
+          {
+            className: 'flex-50 padding-x-5',
+            key: 'last_name',
+            type: 'input',
+            templateOptions: {
+              required: true,
+              appearance: 'outline',
+              label: 'last_name',
+            },
+          },
+          {
+            className: 'flex-50 padding-x-5',
+            key: 'email',
+            type: 'input',
+            templateOptions: {
+              required: true,
+              appearance: 'outline',
+              label: 'email',
+            },
+          },
+          {
+            className: 'flex-50 padding-x-5',
+            key: 'province_state',
+            type: 'input',
+            templateOptions: {
+              required: true,
+              appearance: 'outline',
+              label: 'province_state',
+            },
+          },
+          {
+            className: 'flex-50 padding-x-5',
+            key: 'city_town',
+            type: 'input',
+            templateOptions: {
+              required: true,
+              appearance: 'outline',
+              label: 'city_town',
+            },
+          },
+          {
+            className: 'flex-50 padding-x-5',
+            key: 'street',
+            type: 'input',
+            templateOptions: {
+              required: true,
+              appearance: 'outline',
+              label: 'street',
+            },
+          },
+          {
+            className: 'flex-50 padding-x-5',
+            key: 'alley',
+            type: 'input',
+            templateOptions: {
+              required: true,
+              appearance: 'outline',
+              label: 'alley',
+            },
+          },
+          {
+            className: 'flex-50 padding-x-5',
+            key: 'plaque_number',
+            type: 'input',
+            templateOptions: {
+              required: true,
+              appearance: 'outline',
+              type: 'number',
+              label: 'plaque_number',
+            },
+          },
+          {
+            className: 'flex-50 padding-x-5',
+            key: 'floor_number',
+            type: 'input',
+            templateOptions: {
+              required: true,
+              appearance: 'outline',
+              type: 'number',
+              label: 'floor_number',
+            },
+          },
+          {
+            className: 'flex-50 padding-x-5',
+            key: 'unit_number',
+            type: 'input',
+            templateOptions: {
+              required: true,
+              appearance: 'outline',
+              type: 'number',
+              label: 'unit_number',
+            },
+          },
+          {
+            className: 'flex-50 padding-x-5',
+            key: 'zipcode',
+            type: 'input',
+            templateOptions: {
+              required: true,
+              appearance: 'outline',
+              label: 'zipcode',
             },
           },
         ],
